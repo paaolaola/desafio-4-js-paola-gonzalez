@@ -1,5 +1,5 @@
 // Array / Objetos
-const propiedadesJSON = [
+const propiedades = [
     {
         name: "Casa de campo",
         description: "Un lugar ideal para descansar de la ciudad",
@@ -74,7 +74,7 @@ const crearTarjeta = (propiedad) => {
 
 // Recorrer data
 
-for (let propiedad of propiedadesJSON) {
+for (let propiedad of propiedades) {
     crearTarjeta(propiedad);
 }
 
@@ -82,18 +82,19 @@ for (let propiedad of propiedadesJSON) {
 
 btn.addEventListener("click", () => {
     cards.innerHTML = "";
+    let resultado = 0;
 
-    const cuartos = Number(cuartos.value);
-    const desde = Number(desde.value);
-    const hasta = Number(hasta.value);
-    for (let propiedad of propiedadesJSON) {
-        if (propiedad.cuartos >= cuartos && propiedad.desde >= desde && propiedad.hasta < hasta) {
+    const cuartosSeleccionados = Number(cuartos.value);
+    const metrosDesde = Number(desde.value);
+    const metrosHasta = Number(hasta.value);
+    for (let propiedad of propiedades) {
+        if (propiedad.rooms == cuartosSeleccionados && propiedad.m >= metrosDesde && propiedad.m <= metrosHasta) {
             crearTarjeta(propiedad);
             resultado = resultado + 1;
         }
     }
 
     if (cards.innerHTML === "") {
-        cards.innerHTML = "<h4>No hay resultados<h4>";
+        cards.innerHTML = "<h5>No hay resultados</h5>";
     }
 });
