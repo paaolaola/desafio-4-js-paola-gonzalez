@@ -59,10 +59,13 @@ const crearTarjeta = (propiedad) => {
 
     const template = `
         <img src="${propiedad.src}">
-        <h3>${propiedad.name}</h2>
+        <h5>${propiedad.name}</h5>
+        <div class= card-data>
         <p> Dorm: ${propiedad.rooms}</p>
         <p> Metros: ${propiedad.m}</p>
-        <p>${propiedad.description}</h3>
+        </div>
+        <p>${propiedad.description}</p>
+        <button class="btn-info">Ver más</button>
         `;
 
     card.innerHTML = template;
