@@ -92,6 +92,7 @@ btn.addEventListener("click", () => {
             crearTarjeta(propiedad);
             resultado = resultado + 1;
         }
+        document.getElementById("resultado").innerHTML = ` ${resultado}`;
     }
 
     if (cards.innerHTML === "") {
