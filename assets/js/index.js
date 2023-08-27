@@ -81,6 +81,11 @@ for (let propiedad of propiedades) {
 // Filtro
 
 btn.addEventListener("click", () => {
+    if (cuartos.value === "" || desde.value === "" || hasta.value === "") {
+        alert("Faltan campos por llenar");
+        return;
+    }
+
     cards.innerHTML = "";
     let resultado = 0;
 
